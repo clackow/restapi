@@ -16,15 +16,15 @@ MongoClient.connect('mongodb://localhost:27017/todoapp',(err, client) => {
 
 
 	// //insert data into mongo
-	// db.collection('Todos').insertOne({
-	// 	text: 'Something',
-	// 	completed: false
-	// },(err, result) => {
-	// 	if(err){
-	// 		return console.log('Unable to insert data');
-	// 	}
-	// 	console.log(JSON.stringify(result.ops,undefined,2));
-	// });
+	db.collection('Todos').insertOne({
+		text: 'Hola Amigo',
+		completed: false
+	},(err, result) => {
+		if(err){
+			return console.log('Unable to insert data');
+		}
+		console.log(JSON.stringify(result.ops,undefined,2));
+	});
 
 	// db.collection('users').insertOne({
 	// 	name: 'Daniel Liu',
