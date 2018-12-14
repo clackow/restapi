@@ -11,7 +11,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-
+//post to postman
 app.post('/user',(req,res)=>{
 	var newUser = new user({
 		email: req.body.text
@@ -23,6 +23,14 @@ app.post('/user',(req,res)=>{
 	})
 });
 
+//get from postmand
+app.get('/user',(req,res)=>{
+	user.find().then((users)=>{
+		res.send({users});
+	},(e)=>{
+		res.status(400).send(e);
+	})
+})
 
 
 
