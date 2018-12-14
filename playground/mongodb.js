@@ -6,7 +6,7 @@ var obj = new ObjectID();
 console.log(obj);
 
 //create a connection to the db
-MongoClient.connect('mongodb://localhost:27017/todoapp',(err, client) => {
+MongoClient.connect('mongodb://localhost:27017/todoapp',{ useNewUrlParser: true },(err, client) => {
 	if(err){
 		return console.log('Unable to connect to MongoDB server');
 	}
